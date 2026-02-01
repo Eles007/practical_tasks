@@ -10,8 +10,19 @@ $content = <<<HTML
         Все красиво сверстать используя Bootstrap. Обе формы должны обрабатываться без JS (с включенным и выключенным JS в браузере).
     </p>
     <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
-        <a href="$basePath/login" class="btn btn-primary btn-lg">Вход</a>
-        <a href="$basePath/feedback" class="btn btn-outline-primary btn-lg">Обратная связь</a>
+HTML;
+
+if (isset($_SESSION['auth'])) {
+    $content .= <<<HTML
+            <a href = "$basePath/logout" class="btn btn-primary btn-lg" > Выйти</a >
+            <a href = "$basePath/feedback" class="btn btn-outline-primary btn-lg" > Обратная связь </a >
+        HTML;
+} else {
+    $content .= <<<HTML
+            <a href = "$basePath/login" class="btn btn-primary btn-lg" > Вход</a >
+     HTML;
+}
+$content .= <<<HTML
     </div>
 </div>
 HTML;

@@ -13,12 +13,21 @@
     <div class="container">
         <a class="navbar-brand" href="<?= $basePath ?>">MySite</a>
         <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
-            <li class="nav-item">
-                <a class="nav-link" href="<?= $basePath ?>/login">Вход</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= $basePath ?>/feedback">Обратная связь</a>
-            </li>
+            <?php
+            if (isset($_SESSION['auth'])): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $basePath ?>/logout">Выйти</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $basePath ?>/feedback">Обратная связь</a>
+                </li>
+            <?php
+            else: ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $basePath ?>/login">Вход</a>
+                </li>
+            <?php
+            endif; ?>
         </ul>
     </div>
 </nav>

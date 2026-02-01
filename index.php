@@ -14,6 +14,8 @@ if ($path === '/') {
     $page = include 'pages/login.php';
 } elseif ($path === '/feedback') {
     $page = include 'pages/feedback.php';
+} elseif ($path === '/logout') {
+    $page = include 'pages/logout.php';
 } else {
     http_response_code(404);
     $page = include 'pages/404.php';
