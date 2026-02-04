@@ -5,10 +5,12 @@ require 'config/db.php';
 
 if (!isset($_SESSION['auth'])) {
     header('Location:' . $basePath . '/');
+    exit;
 }
 
-$_SESSION['message'] = '';
+$_SESSION['message'] = $_SESSION['message'] ?? '';
 $old = $_SESSION['old'] ?? [];
+$agree = $_POST['agree'] ?? [];
 
 if (isset($_GET['reset'])) {
     unset($_SESSION['old']);
@@ -22,27 +24,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         !empty($_POST['name']) &&
         !empty($_POST['topic']) &&
         !empty($_POST['contact']) &&
-        !empty($_POST['agree_data']) &&
+        in_array('data', $_POST['agree']) &&
         !empty($_POST['text_message'])
     ) {
+        $agreeJson = json_encode($agree, JSON_UNESCAPED_UNICODE);
+
+
         $stmt = $link->prepare(
             "
             INSERT INTO feedback 
-            (name, topic, contact, agree_news, agree_data, message, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, NOW())
+            (name, topic, contact, agree, message, created_at)
+            VALUES (?, ?, ?, ?, ?, NOW())
         "
         );
 
-        $agreeNews = isset($_POST['agree_news']) ? 1 : 0;
-        $agreeData = 1;
-
         $stmt->bind_param(
-            "sssiss",
+            "sssss",
             $_POST['name'],
             $_POST['topic'],
             $_POST['contact'],
-            $agreeNews,
-            $agreeData,
+            $agreeJson,
             $_POST['text_message']
         );
 
@@ -108,14 +109,14 @@ $content = "
               <label class=\"form-label d-block\">Дополнительно</label>
 
               <div class=\"form-check\">
-                <input class=\"form-check-input\" type=\"checkbox\" name=\"agree_news\" value=\"1\"
-                  " . (isset($old['agree_news']) ? 'checked' : '') . ">
+                <input class=\"form-check-input\" type=\"checkbox\" name=\"agree[]\" value=\"news\"
+                  " . (in_array('news', $old['agree'] ?? []) ? 'checked' : '') . ">
                 <label class=\"form-check-label\">Получать новости</label>
               </div>
 
               <div class=\"form-check\">
-                <input class=\"form-check-input\" type=\"checkbox\" name=\"agree_data\" value=\"1\" required
-                  " . (isset($old['agree_data']) ? 'checked' : '') . ">
+                <input class=\"form-check-input\" type=\"checkbox\" name=\"agree[]\" value=\"data\" required
+                  " . (in_array('data', $old['agree'] ?? []) ? 'checked' : '') . ">
                 <label class=\"form-check-label\">Согласен на обработку данных</label>
               </div>
             </div>
@@ -123,8 +124,8 @@ $content = "
             <div class=\"mb-4\">
               <label class=\"form-label\">Сообщение</label>
               <textarea name=\"text_message\" class=\"form-control\" rows=\"5\" required>"
-    . htmlspecialchars($old['text_message'] ?? '') .
-    "</textarea>
+                . htmlspecialchars($old['text_message'] ?? '') .
+              "</textarea>
             </div>
 
             <div class=\"d-flex gap-2\">
