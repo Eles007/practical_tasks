@@ -198,3 +198,90 @@
 #18 C:/Users/lyos0/Desktop/blog/artisan(16): Illuminate/Foundation/Application->handleCommand()
 #19 {main}
 "} 
+[2026-02-10 14:20:58] local.ERROR: Command "make:contraller" is not defined.
+
+Did you mean one of these?
+    make:cache-table
+    make:cast
+    make:channel
+    make:class
+    make:command
+    make:component
+    make:config
+    make:controller
+    make:enum
+    make:event
+    make:exception
+    make:factory
+    make:interface
+    make:job
+    make:job-middleware
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:notifications-table
+    make:observer
+    make:policy
+    make:provider
+    make:queue-batches-table
+    make:queue-failed-table
+    make:queue-table
+    make:request
+    make:resource
+    make:rule
+    make:scope
+    make:seeder
+    make:session-table
+    make:test
+    make:trait
+    make:view {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:contraller\" is not defined.
+
+Did you mean one of these?
+    make:cache-table
+    make:cast
+    make:channel
+    make:class
+    make:command
+    make:component
+    make:config
+    make:controller
+    make:enum
+    make:event
+    make:exception
+    make:factory
+    make:interface
+    make:job
+    make:job-middleware
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:notifications-table
+    make:observer
+    make:policy
+    make:provider
+    make:queue-batches-table
+    make:queue-failed-table
+    make:queue-table
+    make:request
+    make:resource
+    make:rule
+    make:scope
+    make:seeder
+    make:session-table
+    make:test
+    make:trait
+    make:view at C:/Users/lyos0/Desktop/blog/vendor/symfony/console/Application.php:759)
+[stacktrace]
+#0 C:/Users/lyos0/Desktop/blog/vendor/symfony/console/Application.php(298): Symfony/Component/Console/Application->find()
+#1 C:/Users/lyos0/Desktop/blog/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#2 C:/Users/lyos0/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#3 C:/Users/lyos0/Desktop/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#4 C:/Users/lyos0/Desktop/blog/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#5 {main}
+"} 
