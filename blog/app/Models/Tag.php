@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,14 +16,17 @@ class Tag extends Model
 
     public function posts()
     {
-        return $this->belongsToMany(Post::class)->withTimestamps();
+        return $this->belongsToMany(Post::class);
     }
 
     public static function syncTags(Post $post, string $tagString): void
     {
         $names = collect(
             preg_split('/\s*,\s*/', strtolower($tagString), -1, PREG_SPLIT_NO_EMPTY)
-        )->unique();
+        )
+            ->map(fn (string $tag) => trim($tag))
+            ->filter()
+            ->unique();
 
         $tagIds = [];
 
@@ -33,15 +35,16 @@ class Tag extends Model
             $tagIds[] = $tag->id;
         }
 
-        // update frequency
-        $old = $post->tags->pluck('id')->toArray();
+        $old = $post->tags()->pluck('tags.id')->toArray();
 
         $post->tags()->sync($tagIds);
 
-        static::whereIn('id', array_diff($tagIds, $old))
-            ->increment('frequency');
+        static::whereIn('id', array_diff($tagIds, $old))->increment('frequency');
 
-        static::whereIn('id', array_diff($old, $tagIds))
-            ->decrement('frequency');
+        $removedIds = array_diff($old, $tagIds);
+        if ($removedIds) {
+            static::whereIn('id', $removedIds)->decrement('frequency');
+            static::whereIn('id', $removedIds)->where('frequency', '<', 0)->update(['frequency' => 0]);
+        }
     }
 }
