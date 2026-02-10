@@ -36,7 +36,7 @@ class Post extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class)->withTimestamps();
+        return $this->belongsToMany(Tag::class);
     }
 
     public function scopePublished(Builder $query): Builder
