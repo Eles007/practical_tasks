@@ -15,7 +15,7 @@ class  Comment extends Model
         'author',
         'email',
         'url',
-        'comment',
+        'content',
         'status',
     ];
 

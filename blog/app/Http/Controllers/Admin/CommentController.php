@@ -17,6 +17,8 @@ class CommentController extends Controller
         $comments = Comment::with('post')
             ->latest()
             ->paginate(15);
+
+        return view('admin.comments.index', compact('comments'));
     }
 
     public function approve(Comment $comment)
