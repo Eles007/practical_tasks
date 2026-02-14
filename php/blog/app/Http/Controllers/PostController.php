@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class PostController extends Controller
@@ -42,6 +43,13 @@ class PostController extends Controller
             'user_id' => 'nullable',
         ]);
 
+        $slugBase = Str::slug($data['title']);
+        $slug = $slugBase . '-' . rand(1, 999999);
+        $data['slug'] = $slug;
+
+        $data['is_published'] = $request->has('is_published') == 'on';
+        $data['published_at'] = $request->has('is_published') ? now() : null;
+
         Post::create($data);
 
         return redirect()
@@ -72,13 +80,15 @@ class PostController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|min:3',
-            'slug' => 'nullable',
             'excerpt' => 'required|min:10',
             'body' => 'required|min:10',
             'is_published' => 'nullable',
             'published_at' => 'nullable',
             'user_id' => 'nullable',
         ]);
+
+        $data['is_published'] = $request->has('is_published') == 'on';
+        $data['published_at'] = $request->has('is_published') ? now() : null;
 
         $post->update($data);
 
