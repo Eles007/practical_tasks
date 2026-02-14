@@ -1,6 +1,9 @@
 <?php
 
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('posts', PostController::class);
+Route::prefix('admin')->as('admin.')->group(function () {
+    Route::resource('posts', AdminPostController::class);
+});
+

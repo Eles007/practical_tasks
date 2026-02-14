@@ -9,7 +9,7 @@
             <p class="text-sm text-gray-400">Управляйте контентом блога</p>
         </div>
 
-        <a href="{{ route('posts.create') }}"
+        <a href="{{ route('admin.posts.create') }}"
            class="btn btn-primary cursor-pointer p-1 rounded-xl">
             + Новый пост
         </a>
@@ -63,7 +63,7 @@
                     <td class="px-4 py-3">{{$post->id}}</td>
 
                     <td class="px-4 py-3">
-                        <a href="{{ route('posts.show', $post->id) }}" class="hover:underline">
+                        <a href="{{ route('admin.posts.show', $post->id) }}" class="hover:underline">
                             {{$post->title}}
                         </a>
                     </td>
@@ -76,10 +76,10 @@
 
                     <td class="px-4 py-3">
                         <div class="flex items-center gap-2 justify-end">
-                            <a href="{{route('posts.edit', $post->id)}}" class="btn btn-outline">
+                            <a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-outline">
                                 Редактировать
                             </a>
-                            <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button
