@@ -6,9 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Laravel 12 Блог с нуля')</title>
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .accent {
             background-image: linear-gradient(135deg, #22d3ee, #a78bfa, #f472b6);
@@ -61,7 +59,7 @@
                 </svg>
             </button>
 
-            <a href="#" class="flex items-center gap-2">
+            <a href="{{route('admin.posts.index')}}" class="flex items-center gap-2">
                 <span
                     class="inline-flex h-9 w-9 items-center justify-center rounded-xl accent text-gray-900 font-black">
                     A
@@ -91,7 +89,7 @@
     <aside id="aside"
            class="md:col-span-3 lg:col-span-2 glass rounded-2xl p-3 border border-white/10 md:block hidden">
         <nav class="space-y-1">
-            <a href="posts.list.html"
+            <a href="{{route('admin.posts.index')}}"
                class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-white bg-white/5">
 
                 <svg class="h-5 w-5"
