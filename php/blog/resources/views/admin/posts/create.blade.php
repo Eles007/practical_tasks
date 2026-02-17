@@ -12,27 +12,27 @@
             <label class="label">Изображение</label>
             <input type="file" name="image" accept="image/*"
                    class="mt-1 block w-full rounded border border-white/10 bg-gray-900/40 p-2 cursor-pointer">
-            @error('image') <p class="text-red-400  text-mt mt-1">{{$message}}}</p> @enderror
+            @error('image') <p class="text-red-400  text-mt mt-1">{{$message}}</p> @enderror
         </div>
 
         <div class="flex flex-col">
             <label class="label">Заголовок</label>
             <input class="input border px-3 py-1 rounded-xl" placeholder="Название поста" name="title">
-            @error('title') <p class="text-red-400  text-mt mt-1">{{$message}}}</p> @enderror
+            @error('title') <p class="text-red-400  text-mt mt-1">{{$message}}</p> @enderror
         </div>
 
         <div class="flex flex-col">
             <label class="label">Краткое описание</label>
             <textarea class="input border px-3 py-1 rounded-xl" rows="3"
                       placeholder="Тизер для списка постов…" name="excerpt"></textarea>
-            @error('excerpt') <p class="text-red-400  text-mt mt-1">{{$message}}}</p> @enderror
+            @error('excerpt') <p class="text-red-400  text-mt mt-1">{{$message}}</p> @enderror
         </div>
 
         <div class="flex flex-col">
             <label class="label">Текст</label>
             <textarea class="input border px-3 py-1 rounded-xl" rows="10" placeholder="Основной контент…"
                       name="body"></textarea>
-            @error('body') <p class="text-red-400  text-mt mt-1">{{$message}}}</p> @enderror
+            @error('body') <p class="text-red-400  text-mt mt-1">{{$message}}</p> @enderror
         </div>
 
         <div class="grid sm:grid-cols-2 gap-4">
