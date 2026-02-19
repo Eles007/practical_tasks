@@ -76,9 +76,10 @@
                 Привет, Admin
             </span>
 
-            <button class="btn btn-outline">
-                Выйти
-            </button>
+            <form method="POST" action="{{route('logout')}}">
+                @csrf
+                <button class="text-sm text-red-600">Выйти</button>
+            </form>
         </div>
 
     </div>
