@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn() => redirect()->route('blog.index'))->name('index');
 
-Route::prefix('admin')->as('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')->as('admin.')->middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('posts', AdminPostController::class);
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Enums\UserRole;
 use App\Models\User;
 use App\Repositories\Interfaces\UserRepositoryInterface;
 
@@ -16,5 +17,13 @@ class UserRepository implements UserRepositoryInterface
     public function findByEmail(string $email): ?User
     {
         return User::where('email', $email)->first();
+    }
+
+
+    public function updateRole(int $id, UserRole $role): bool
+    {
+        return User::where('id', $id)->update([
+            'role' => $role->value
+        ]);
     }
 }
