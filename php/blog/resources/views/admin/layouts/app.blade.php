@@ -104,7 +104,7 @@
                 </svg>
                 Посты
             </a>
-            <a href="#"
+            <a href="{{route('admin.users.index')}}"
                class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
                 <svg class="h-5 w-5"
                      viewBox="0 0 24 24"
@@ -115,7 +115,7 @@
                           stroke-width="1.5"
                           stroke-linecap="round"/>
                 </svg>
-                Категории
+                Пользователи
             </a>
         </nav>
     </aside>

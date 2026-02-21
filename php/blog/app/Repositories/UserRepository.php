@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Enums\UserRole;
 use App\Models\User;
 use App\Repositories\Interfaces\UserRepositoryInterface;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class UserRepository implements UserRepositoryInterface
 {
@@ -25,5 +26,10 @@ class UserRepository implements UserRepositoryInterface
         return User::where('id', $id)->update([
             'role' => $role->value
         ]);
+    }
+
+    public function getPaginated(int $perPage): LengthAwarePaginator
+    {
+        return User::latest()->paginate($perPage);
     }
 }
