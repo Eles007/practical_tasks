@@ -1,6 +1,8 @@
 <?php
 
 use App\Exceptions\ApiException;
+use App\Http\Middleware\RequestIdMiddleware;
+use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -18,10 +20,34 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
-            'role' => \App\Http\Middleware\RoleMiddleware::class,
+            'role' => RoleMiddleware::class,
         ]);
+        $middleware->append(RequestIdMiddleware::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+        $exceptions->report(function (ApiException $e): bool {
+            if ($e->status >= 400 && $e->status < 500) {
+                return false;
+            }
+
+            Log::error('ApiException', [
+                'message' => $e->getMessage(),
+                'status' => $e->status,
+                'errors' => $e->errors
+            ]);
+
+            return true;
+        });
+
+        $exceptions->report(function (Throwable $e): bool {
+            Log::error("Unhandlew exception", [
+                'type' => get_class($e),
+                'message' => $e->getMessage(),
+            ]);
+
+            return true;
+        });
+
         $exceptions->render(function (ApiException $e) {
             return response()->json([
                 'success' => false,
