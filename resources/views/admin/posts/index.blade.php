@@ -69,7 +69,14 @@
                     </td>
 
                     <td class="px-4 py-3">
-                        <span class="badge">{{$post->is_published ? 'Опубликован': 'В драфте'}}</span>
+                        <div class="flex flex-col gap-1">
+                            <span class="badge">
+                                {{$post->is_published ? 'Опубликован': 'В драфте'}}
+                            </span>
+                            <span class="badge text-xs {{ $post->is_approved ? 'bg-emerald-600/40' : 'bg-yellow-600/40' }}">
+                                {{ $post->is_approved ? 'Одобрен' : 'Ожидает модерации' }}
+                            </span>
+                        </div>
                     </td>
 
                     <td class="px-4 py-3">{{ $post->published_at?->format('d.m.Y') }}</td>

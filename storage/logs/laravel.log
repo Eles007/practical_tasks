@@ -8244,3 +8244,30 @@ Did you mean one of these?
 #61 {main}
 "} 
 [2026-02-25 18:43:41] local.INFO: Post created {"request_id":"b0cfec50-457a-4160-9bad-2ff305b64ec3","path":"api/posts","method":"POST","post_id":46,"user_id":1} 
+[2026-02-27 11:22:33] local.ERROR: Unhandlew exception {"type":"Error","message":"Class \"Redis\" not found"} 
+[2026-02-27 11:22:33] local.ERROR: Class "Redis" not found {"exception":"[object] (Error(code: 0): Class \"Redis\" not found at C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:80)
+[stacktrace]
+#0 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php(34): Illuminate/Redis/Connectors/PhpRedisConnector->createClient()
+#1 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php(39): Illuminate/Redis/Connectors/PhpRedisConnector->{closure:Illuminate/Redis/Connectors/PhpRedisConnector::connect():33}()
+#2 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Redis/RedisManager.php(111): Illuminate/Redis/Connectors/PhpRedisConnector->connect()
+#3 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Redis/RedisManager.php(92): Illuminate/Redis/RedisManager->resolve()
+#4 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Cache/RedisStore.php(368): Illuminate/Redis/RedisManager->connection()
+#5 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Cache/RedisStore.php(275): Illuminate/Cache/RedisStore->connection()
+#6 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Cache/Repository.php(962): Illuminate/Cache/RedisStore->flush()
+#7 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Cache/Console/ClearCommand.php(68): Illuminate/Cache/Repository->__call()
+#8 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Cache/Console/ClearCommand->handle()
+#9 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::{closure:Illuminate/Container/BoundMethod::call():35}()
+#10 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate/Container/Util::unwrapIfClosure()
+#11 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod()
+#12 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Container/Container.php(799): Illuminate/Container/BoundMethod::call()
+#13 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate/Container/Container->call()
+#14 C:/laragon/www/blog/vendor/symfony/console/Command/Command.php(341): Illuminate/Console/Command->execute()
+#15 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony/Component/Console/Command/Command->run()
+#16 C:/laragon/www/blog/vendor/symfony/console/Application.php(1102): Illuminate/Console/Command->run()
+#17 C:/laragon/www/blog/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#18 C:/laragon/www/blog/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#19 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#20 C:/laragon/www/blog/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#21 C:/laragon/www/blog/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#22 {main}
+"} 

@@ -36,6 +36,17 @@
         </div>
 
         <div class="flex flex-col">
+            <label class="label">Теги</label>
+            <input
+                class="input border px-3 py-1 rounded-xl"
+                placeholder="Например: laravel, php, backend"
+                name="tags"
+                value="{{ old('tags', $post->tags->pluck('name')->join(', ')) }}"
+            >
+            @error('tags') <p class="text-red-400 text-mt mt-1">{{$message}}</p> @enderror
+        </div>
+
+        <div class="flex flex-col">
             <label class="label">Краткое описание</label>
             <textarea class="input border px-3 py-1 rounded-xl" rows="3"
                       placeholder="Тизер для списка постов…"
@@ -55,6 +66,14 @@
                 <label class="label">Статус</label>
                 <input type="checkbox"
                        name="is_published" {{ old('is_published', $post->is_published ?? false) ? 'checked' : ''}}>
+            </div>
+            <div class="flex flex-col">
+                <label class="label">Одобрен</label>
+                <input
+                    type="checkbox"
+                    name="is_approved"
+                    {{ old('is_approved', $post->is_approved ?? false) ? 'checked' : ''}}
+                >
             </div>
         </div>
 

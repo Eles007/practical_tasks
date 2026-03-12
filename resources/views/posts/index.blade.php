@@ -3,7 +3,25 @@
 @section('title', 'Блог на Laravel 12')
 
 @section('content')
-    <form action="{{route('blog.index')}}" method="GET" class="my-4 flex max-w-md items-center gap-2">
+    @isset($tag)
+        <div class="mb-4 flex items-center justify-between gap-3">
+            <div class="text-sm text-gray-300">
+                Тег: <span class="font-semibold text-white">#{{ $tag->name }}</span>
+            </div>
+            <a
+                href="{{ route('blog.index') }}"
+                class="text-sm text-gray-400 hover:text-white transition"
+            >
+                Сбросить фильтр
+            </a>
+        </div>
+    @endisset
+
+    <form
+        action="{{ isset($tag) ? route('blog.tags.show', $tag->slug) : route('blog.index') }}"
+        method="GET"
+        class="my-4 flex max-w-md items-center gap-2"
+    >
         <input
             type="text"
             name="q"
@@ -36,6 +54,20 @@
                     <h3 class="text-xl font-semibold leading-tight text-white">
                         {{$post->title}}
                     </h3>
+
+                    @if($post->tags->isNotEmpty())
+                        <div class="flex flex-wrap gap-2">
+                            @foreach($post->tags as $t)
+                                <a
+                                    href="{{ route('blog.tags.show', $t->slug) }}"
+                                    class="relative z-20 inline-flex items-center rounded-full border border-white/10 bg-gray-950/40 px-2.5 py-1 text-xs text-gray-300 hover:text-white hover:border-white/20 transition"
+                                >
+                                    #{{ $t->name }}
+                                </a>
+                            @endforeach
+                        </div>
+                    @endif
+
                     <p class="text-gray-300">
                         {{$post->excerpt}}
                     </p>

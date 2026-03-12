@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Models\Post;
-use App\Repositories\Interfaces\ind;
 use App\Repositories\Interfaces\PostRepositoryInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
@@ -12,7 +11,10 @@ class PostRepository implements PostRepositoryInterface
 {
     public function getPublishedPaginated(?string $search, int $perPage): LengthAwarePaginator
     {
-        $query = Post::query()->where('is_published', true);
+        $query = Post::query()
+            ->where('is_published', true)
+            ->where('is_approved', true)
+            ->with(['tags']);
 
         if ($search = trim((string)$search)) {
             $query->where(function ($q) use ($search) {
@@ -31,6 +33,8 @@ class PostRepository implements PostRepositoryInterface
     {
         return Post::query()->where('slug', $slug)
             ->where('is_published', true)
+            ->where('is_approved', true)
+            ->with(['tags'])
             ->firstOrFail();
     }
 

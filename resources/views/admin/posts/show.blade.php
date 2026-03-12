@@ -22,6 +22,21 @@
         </p>
     </div>
 
+    <div class="glass rounded-2xl p-6 border border-white/10">
+        <h2 class="text-lg font-semibold mb-2">Теги</h2>
+        @if($post->tags->isNotEmpty())
+            <div class="flex flex-wrap gap-2">
+                @foreach($post->tags as $t)
+                    <span class="inline-flex items-center rounded-full border border-white/10 bg-gray-900/40 px-2.5 py-1 text-xs text-gray-200">
+                        #{{ $t->name }}
+                    </span>
+                @endforeach
+            </div>
+        @else
+            <p class="text-sm text-gray-400">Тегов нет</p>
+        @endif
+    </div>
+
     <!-- Основной текст -->
     <div class="glass rounded-2xl p-6 border border-white/10">
         <h2 class="text-lg font-semibold mb-4">Контент</h2>

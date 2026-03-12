@@ -23,9 +23,11 @@ class UpdatePostRequest extends FormRequest
     {
         return [
             'title' => 'required|min:3',
+            'tags' => ['nullable', 'string', 'max:500'],
             'excerpt' => 'required|min:10',
             'body' => 'required|min:10',
             'is_published' => 'sometimes|boolean',
+            'is_approved' => 'sometimes|boolean',
             'published_at' => 'nullable',
             'user_id' => 'nullable',
             'image' => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:2048'],
@@ -47,6 +49,7 @@ class UpdatePostRequest extends FormRequest
     {
         $this->merge([
             'is_published' => $this->boolean('is_published'),
+            'is_approved' => $this->boolean('is_approved'),
             'remove_image' => $this->boolean('remove_image'),
         ]);
     }

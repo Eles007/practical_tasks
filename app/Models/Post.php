@@ -5,7 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
@@ -18,12 +21,14 @@ class Post extends Model
         'excerpt',
         'body',
         'is_published',
+        'is_approved',
         'published_at',
         'user_id'
     ];
 
     protected $casts = [
         'is_published' => 'boolean',
+        'is_approved' => 'boolean',
         'published_at' => 'datetime'
     ];
 
@@ -32,8 +37,22 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function getImageUrlAttribute(): ?string
     {
-        return $this->image ? asset('storage/' . $this->image) : null;
+        if (!$this->image) {
+            return null;
+        }
+
+        return route('media.public', ['path' => ltrim($this->image, '/')]);
     }
 }

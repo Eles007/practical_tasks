@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Repositories\Interfaces\PostRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -22,7 +23,15 @@ class PostController extends Controller
     public function show(string $slug): View
     {
         $post = $this->posts->findPublishedBySlugOrFail($slug);
-        return view('posts.show', compact('post'));
+
+        $comments = Comment::query()
+            ->where('post_id', $post->id)
+            ->where('is_approved', true)
+            ->latest()
+            ->paginate(10)
+            ->withQueryString();
+
+        return view('posts.show', compact('post', 'comments'));
     }
 }
 

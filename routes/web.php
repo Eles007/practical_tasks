@@ -3,11 +3,14 @@
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('/', fn() => redirect()->route('blog.index'))->name('index');
 
@@ -21,8 +24,23 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'role:admin'])->group(
 Route::prefix('blog')->as('blog.')->group(function () {
     Route::get('/', [PostController:: class, 'index'])->name('index');
 
+    Route::get('/tags/{tag:slug}', [TagController::class, 'show'])->name('tags.show');
+
     Route::get('/{post:slug}', [PostController:: class, 'show'])->name('show');
+    Route::post('/{post:slug}/comments', [CommentController::class, 'store'])
+        ->middleware('throttle:10,1')
+        ->name('comments.store');
 });
+
+Route::get('/media/{path}', function (string $path) {
+    $disk = Storage::disk('public');
+
+    if (!$disk->exists($path)) {
+        abort(404);
+    }
+
+    return $disk->response($path);
+})->where('path', '.*')->name('media.public');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController:: class, 'showLogin'])->name('login');
