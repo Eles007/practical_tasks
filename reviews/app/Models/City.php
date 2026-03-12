@@ -2,15 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class City extends Model
 {
-    protected $fillable = [
-        'name',
-    ];
+    use HasFactory;
 
-    public function reviews()
+    protected $fillable = ['name'];
+
+    protected $index = ['name'];
+
+    public function reviews(): BelongsToMany
     {
         return $this->belongsToMany(Review::class);
     }
