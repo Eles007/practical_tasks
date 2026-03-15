@@ -17,9 +17,8 @@ class GeoService
             $data = $response->json();
 
             if ($data['status'] !== 'success') {
-                return redirect()->route('cities');
+                return [];
             }
-
 
             return [
                 'city' => $data['city'],

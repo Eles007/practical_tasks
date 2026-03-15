@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Services\GeoService;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller

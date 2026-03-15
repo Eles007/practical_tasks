@@ -11,6 +11,18 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'rating',
+        'img',
+        'user_id',
+    ];
+
+    protected $casts = [
+        'rating' => 'integer',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

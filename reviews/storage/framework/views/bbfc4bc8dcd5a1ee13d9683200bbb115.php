@@ -10,7 +10,7 @@
 <?php $component->withAttributes([]); ?>
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
         <div class="col-lg-4 p-0 overflow-hidden">
-            <img class="rounded-lg-3" src="<?php echo e(asset('storage/hero_city.png')); ?>" alt=""
+            <img class="img-fluid rounded-3" src="<?php echo e(asset('storage/hero_city.png')); ?>" alt=""
                  width="720">
         </div>
         <div class="col-lg-1"></div>

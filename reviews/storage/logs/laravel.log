@@ -7863,3 +7863,393 @@ Did you mean one of these?
 #58 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('C://laragon//www//...')
 #59 {main}
 "} 
+[2026-03-15 12:09:41] local.ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:83)
+[stacktrace]
+#0 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Support/helpers.php(388): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::key():81}('')
+#1 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(81): tap('', Object(Closure))
+#2 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(64): Illuminate/Encryption/EncryptionServiceProvider->key(Array)
+#3 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(32): Illuminate/Encryption/EncryptionServiceProvider->parseKey(Array)
+#4 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1115): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::registerEncrypter():29}(Object(Illuminate/Foundation/Application), Array)
+#5 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build(Object(Closure))
+#6 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('encrypter', Array, true)
+#7 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('encrypter', Array)
+#8 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('encrypter', Array)
+#9 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1336): Illuminate/Foundation/Application->make('encrypter')
+#10 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1237): Illuminate/Container/Container->resolveClass(Object(ReflectionParameter))
+#11 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1162): Illuminate/Container/Container->resolveDependencies(Array)
+#12 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build('Illuminate//Cook...')
+#13 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('Illuminate//Cook...', Array, true)
+#14 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('Illuminate//Cook...', Array)
+#15 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('Illuminate//Cook...', Array)
+#16 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(208): Illuminate/Foundation/Application->make('Illuminate//Cook...')
+#17 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#18 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#19 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#20 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#21 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#22 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#23 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#24 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():178}(Object(Illuminate/Http/Request))
+#25 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#26 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#28 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#31 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#32 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#33 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#35 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#36 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#37 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#38 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#39 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#41 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePathEncoding->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#43 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#44 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#45 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#46 C:/laragon/www/reviews/public/index.php(20): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#47 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('C://laragon//www//...')
+#48 {main}
+"} 
+[2026-03-15 12:09:42] local.ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:83)
+[stacktrace]
+#0 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Support/helpers.php(388): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::key():81}('')
+#1 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(81): tap('', Object(Closure))
+#2 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(64): Illuminate/Encryption/EncryptionServiceProvider->key(Array)
+#3 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(32): Illuminate/Encryption/EncryptionServiceProvider->parseKey(Array)
+#4 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1115): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::registerEncrypter():29}(Object(Illuminate/Foundation/Application), Array)
+#5 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build(Object(Closure))
+#6 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('encrypter', Array, true)
+#7 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('encrypter', Array)
+#8 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('encrypter', Array)
+#9 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1336): Illuminate/Foundation/Application->make('encrypter')
+#10 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1237): Illuminate/Container/Container->resolveClass(Object(ReflectionParameter))
+#11 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1162): Illuminate/Container/Container->resolveDependencies(Array)
+#12 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build('Illuminate//Cook...')
+#13 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('Illuminate//Cook...', Array, true)
+#14 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('Illuminate//Cook...', Array)
+#15 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('Illuminate//Cook...', Array)
+#16 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(257): Illuminate/Foundation/Application->make('Illuminate//Cook...')
+#17 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(215): Illuminate/Foundation/Http/Kernel->terminateMiddleware(Object(Illuminate/Http/Request), Object(Illuminate/Http/Response))
+#18 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1222): Illuminate/Foundation/Http/Kernel->terminate(Object(Illuminate/Http/Request), Object(Illuminate/Http/Response))
+#19 C:/laragon/www/reviews/public/index.php(20): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#20 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('C://laragon//www//...')
+#21 {main}
+"} 
+[2026-03-15 12:10:43] local.ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:83)
+[stacktrace]
+#0 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Support/helpers.php(388): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::key():81}('')
+#1 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(81): tap('', Object(Closure))
+#2 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(64): Illuminate/Encryption/EncryptionServiceProvider->key(Array)
+#3 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(32): Illuminate/Encryption/EncryptionServiceProvider->parseKey(Array)
+#4 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1115): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::registerEncrypter():29}(Object(Illuminate/Foundation/Application), Array)
+#5 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build(Object(Closure))
+#6 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('encrypter', Array, true)
+#7 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('encrypter', Array)
+#8 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('encrypter', Array)
+#9 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1336): Illuminate/Foundation/Application->make('encrypter')
+#10 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1237): Illuminate/Container/Container->resolveClass(Object(ReflectionParameter))
+#11 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1162): Illuminate/Container/Container->resolveDependencies(Array)
+#12 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build('Illuminate//Cook...')
+#13 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('Illuminate//Cook...', Array, true)
+#14 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('Illuminate//Cook...', Array)
+#15 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('Illuminate//Cook...', Array)
+#16 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(208): Illuminate/Foundation/Application->make('Illuminate//Cook...')
+#17 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#18 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#19 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#20 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#21 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#22 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#23 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#24 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():178}(Object(Illuminate/Http/Request))
+#25 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#26 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#28 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#31 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#32 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#33 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#35 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#36 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#37 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#38 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#39 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#41 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePathEncoding->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#43 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#44 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#45 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#46 C:/laragon/www/reviews/public/index.php(20): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#47 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('C://laragon//www//...')
+#48 {main}
+"} 
+[2026-03-15 12:10:44] local.ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:83)
+[stacktrace]
+#0 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Support/helpers.php(388): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::key():81}('')
+#1 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(81): tap('', Object(Closure))
+#2 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(64): Illuminate/Encryption/EncryptionServiceProvider->key(Array)
+#3 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(32): Illuminate/Encryption/EncryptionServiceProvider->parseKey(Array)
+#4 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1115): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::registerEncrypter():29}(Object(Illuminate/Foundation/Application), Array)
+#5 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build(Object(Closure))
+#6 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('encrypter', Array, true)
+#7 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('encrypter', Array)
+#8 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('encrypter', Array)
+#9 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1336): Illuminate/Foundation/Application->make('encrypter')
+#10 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1237): Illuminate/Container/Container->resolveClass(Object(ReflectionParameter))
+#11 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1162): Illuminate/Container/Container->resolveDependencies(Array)
+#12 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build('Illuminate//Cook...')
+#13 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('Illuminate//Cook...', Array, true)
+#14 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('Illuminate//Cook...', Array)
+#15 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('Illuminate//Cook...', Array)
+#16 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(257): Illuminate/Foundation/Application->make('Illuminate//Cook...')
+#17 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(215): Illuminate/Foundation/Http/Kernel->terminateMiddleware(Object(Illuminate/Http/Request), Object(Illuminate/Http/Response))
+#18 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1222): Illuminate/Foundation/Http/Kernel->terminate(Object(Illuminate/Http/Request), Object(Illuminate/Http/Response))
+#19 C:/laragon/www/reviews/public/index.php(20): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#20 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('C://laragon//www//...')
+#21 {main}
+"} 
+[2026-03-15 12:10:49] local.ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:83)
+[stacktrace]
+#0 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Support/helpers.php(388): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::key():81}('')
+#1 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(81): tap('', Object(Closure))
+#2 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(64): Illuminate/Encryption/EncryptionServiceProvider->key(Array)
+#3 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(32): Illuminate/Encryption/EncryptionServiceProvider->parseKey(Array)
+#4 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1115): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::registerEncrypter():29}(Object(Illuminate/Foundation/Application), Array)
+#5 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build(Object(Closure))
+#6 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('encrypter', Array, true)
+#7 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('encrypter', Array)
+#8 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('encrypter', Array)
+#9 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1336): Illuminate/Foundation/Application->make('encrypter')
+#10 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1237): Illuminate/Container/Container->resolveClass(Object(ReflectionParameter))
+#11 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1162): Illuminate/Container/Container->resolveDependencies(Array)
+#12 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build('Illuminate//Cook...')
+#13 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('Illuminate//Cook...', Array, true)
+#14 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('Illuminate//Cook...', Array)
+#15 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('Illuminate//Cook...', Array)
+#16 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(208): Illuminate/Foundation/Application->make('Illuminate//Cook...')
+#17 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#18 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(821): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#19 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate/Routing/Router->runRouteWithinStack(Object(Illuminate/Routing/Route), Object(Illuminate/Http/Request))
+#20 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(764): Illuminate/Routing/Router->runRoute(Object(Illuminate/Http/Request), Object(Illuminate/Routing/Route))
+#21 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Routing/Router.php(753): Illuminate/Routing/Router->dispatchToRoute(Object(Illuminate/Http/Request))
+#22 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate/Routing/Router->dispatch(Object(Illuminate/Http/Request))
+#23 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(180): Illuminate/Foundation/Http/Kernel->{closure:Illuminate/Foundation/Http/Kernel::dispatchToRouter():197}(Object(Illuminate/Http/Request))
+#24 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:Illuminate/Pipeline/Pipeline::prepareDestination():178}(Object(Illuminate/Http/Request))
+#25 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#26 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull->handle(Object(Illuminate/Http/Request), Object(Closure))
+#27 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#28 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate/Foundation/Http/Middleware/TransformsRequest->handle(Object(Illuminate/Http/Request), Object(Closure))
+#29 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/TrimStrings->handle(Object(Illuminate/Http/Request), Object(Closure))
+#30 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#31 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePostSize->handle(Object(Illuminate/Http/Request), Object(Closure))
+#32 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(109): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#33 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance->handle(Object(Illuminate/Http/Request), Object(Closure))
+#34 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(61): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#35 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/HandleCors->handle(Object(Illuminate/Http/Request), Object(Closure))
+#36 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#37 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/TrustProxies->handle(Object(Illuminate/Http/Request), Object(Closure))
+#38 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php(22): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#39 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks->handle(Object(Illuminate/Http/Request), Object(Closure))
+#40 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php(26): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#41 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(219): Illuminate/Http/Middleware/ValidatePathEncoding->handle(Object(Illuminate/Http/Request), Object(Closure))
+#42 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate/Pipeline/Pipeline->{closure:{closure:Illuminate/Pipeline/Pipeline::carry():194}:195}(Object(Illuminate/Http/Request))
+#43 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate/Pipeline/Pipeline->then(Object(Closure))
+#44 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate/Foundation/Http/Kernel->sendRequestThroughRouter(Object(Illuminate/Http/Request))
+#45 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate/Foundation/Http/Kernel->handle(Object(Illuminate/Http/Request))
+#46 C:/laragon/www/reviews/public/index.php(20): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#47 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('C://laragon//www//...')
+#48 {main}
+"} 
+[2026-03-15 12:10:50] local.ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:83)
+[stacktrace]
+#0 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Support/helpers.php(388): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::key():81}('')
+#1 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(81): tap('', Object(Closure))
+#2 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(64): Illuminate/Encryption/EncryptionServiceProvider->key(Array)
+#3 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php(32): Illuminate/Encryption/EncryptionServiceProvider->parseKey(Array)
+#4 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1115): Illuminate/Encryption/EncryptionServiceProvider->{closure:Illuminate/Encryption/EncryptionServiceProvider::registerEncrypter():29}(Object(Illuminate/Foundation/Application), Array)
+#5 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build(Object(Closure))
+#6 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('encrypter', Array, true)
+#7 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('encrypter', Array)
+#8 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('encrypter', Array)
+#9 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1336): Illuminate/Foundation/Application->make('encrypter')
+#10 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1237): Illuminate/Container/Container->resolveClass(Object(ReflectionParameter))
+#11 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(1162): Illuminate/Container/Container->resolveDependencies(Array)
+#12 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(933): Illuminate/Container/Container->build('Illuminate//Cook...')
+#13 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1078): Illuminate/Container/Container->resolve('Illuminate//Cook...', Array, true)
+#14 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Container/Container.php(864): Illuminate/Foundation/Application->resolve('Illuminate//Cook...', Array)
+#15 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1058): Illuminate/Container/Container->make('Illuminate//Cook...', Array)
+#16 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(257): Illuminate/Foundation/Application->make('Illuminate//Cook...')
+#17 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(215): Illuminate/Foundation/Http/Kernel->terminateMiddleware(Object(Illuminate/Http/Request), Object(Illuminate/Http/Response))
+#18 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1222): Illuminate/Foundation/Http/Kernel->terminate(Object(Illuminate/Http/Request), Object(Illuminate/Http/Response))
+#19 C:/laragon/www/reviews/public/index.php(20): Illuminate/Foundation/Application->handleRequest(Object(Illuminate/Http/Request))
+#20 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('C://laragon//www//...')
+#21 {main}
+"} 
+[2026-03-15 12:48:13] local.ERROR: The "--compact" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--compact\" option does not exist. at C:/laragon/www/reviews/vendor/symfony/console/Input/ArgvInput.php:226)
+[stacktrace]
+#0 C:/laragon/www/reviews/vendor/symfony/console/Input/ArgvInput.php(155): Symfony/Component/Console/Input/ArgvInput->addLongOption()
+#1 C:/laragon/www/reviews/vendor/symfony/console/Input/ArgvInput.php(88): Symfony/Component/Console/Input/ArgvInput->parseLongOption()
+#2 C:/laragon/www/reviews/vendor/symfony/console/Input/ArgvInput.php(77): Symfony/Component/Console/Input/ArgvInput->parseToken()
+#3 C:/laragon/www/reviews/vendor/symfony/console/Input/Input.php(53): Symfony/Component/Console/Input/ArgvInput->parse()
+#4 C:/laragon/www/reviews/vendor/symfony/console/Command/Command.php(295): Symfony/Component/Console/Input/Input->bind()
+#5 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony/Component/Console/Command/Command->run()
+#6 C:/laragon/www/reviews/vendor/symfony/console/Application.php(1117): Illuminate/Console/Command->run()
+#7 C:/laragon/www/reviews/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand()
+#8 C:/laragon/www/reviews/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#9 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#10 C:/laragon/www/reviews/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#11 C:/laragon/www/reviews/artisan(16): Illuminate/Foundation/Application->handleCommand()
+#12 {main}
+"} 
+[2026-03-15 13:01:21] local.DEBUG: From: Laravel <hello@example.com>
+To: lyos00@mail.ru
+Subject: Verify Email Address
+MIME-Version: 1.0
+Date: Sun, 15 Mar 2026 13:01:21 +0000
+Message-ID: <69c8143e4d864cc629768394a9c57aad@example.com>
+Content-Type: multipart/alternative; boundary=S8p0CCYC
+
+--S8p0CCYC
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Laravel: http://localhost
+
+# Hello!
+
+Please click the button below to verify your email address.
+
+Verify Email Address: http://127.0.0.1:8001/email/verify/71/b90b1f90aa1a98bb30f2f67581560c44ced0ea5c?expires=1773583280&signature=e6ec4ec057a71ffd3710e84f7825ef1d393b0c9c788c0961ffb6ad0a54e00382
+
+If you did not create an account, no further action is required.
+
+Regards,
+Laravel
+
+If you're having trouble clicking the "Verify Email Address" button, copy and paste the URL below
+into your web browser: [http://127.0.0.1:8001/email/verify/71/b90b1f90aa1a98bb30f2f67581560c44ced0ea5c?expires=1773583280&signature=e6ec4ec057a71ffd3710e84f7825ef1d393b0c9c788c0961ffb6ad0a54e00382](http://127.0.0.1:8001/email/verify/71/b90b1f90aa1a98bb30f2f67581560c44ced0ea5c?expires=1773583280&signature=e6ec4ec057a71ffd3710e84f7825ef1d393b0c9c788c0961ffb6ad0a54e00382)
+
+© 2026 Laravel. All rights reserved.
+
+--S8p0CCYC
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>Laravel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<style>
+@media only screen and (max-width: 600px) {
+.inner-body {
+width: 100% !important;
+}
+
+.footer {
+width: 100% !important;
+}
+}
+
+@media only screen and (max-width: 500px) {
+.button {
+width: 100% !important;
+}
+}
+</style>
+
+</head>
+<body style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; background-color: #ffffff; color: #52525b; height: 100%; line-height: 1.4; margin: 0; padding: 0; width: 100% !important;">
+
+<table class="wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #fafafa; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td class="header" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; padding: 25px 0; text-align: center;">
+<a href="http://localhost" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; font-size: 19px; font-weight: bold; text-decoration: none; display: inline-block;">
+<img src="https://laravel.com/img/notification-logo-v2.1.png" class="logo" alt="Laravel Logo" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100%; border: none; height: 75px; margin-top: 15px; margin-bottom: 10px; max-height: 75px; width: 75px;">
+</a>
+</td>
+</tr>
+
+<!-- Email Body -->
+<tr>
+<td class="body" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #fafafa; border-bottom: 1px solid #fafafa; border-top: 1px solid #fafafa; margin: 0; padding: 0; width: 100%; border: hidden !important;">
+<table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; background-color: #ffffff; border-color: #e4e4e7; border-radius: 4px; border-width: 1px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); margin: 0 auto; padding: 0; width: 570px;">
+<!-- Body content -->
+<tr>
+<td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; font-size: 18px; font-weight: bold; margin-top: 0; text-align: start;">Hello!</h1>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Please click the button below to verify your email address.</p>
+<table class="action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 30px auto; padding: 0; text-align: center; width: 100%; float: unset;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<a href="http://127.0.0.1:8001/email/verify/71/b90b1f90aa1a98bb30f2f67581560c44ced0ea5c?expires=1773583280&amp;signature=e6ec4ec057a71ffd3710e84f7825ef1d393b0c9c788c0961ffb6ad0a54e00382" class="button button-primary" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: #18181b; border-bottom: 8px solid #18181b; border-left: 18px solid #18181b; border-right: 18px solid #18181b; border-top: 8px solid #18181b; word-break: break-all;">Verify Email Address</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">If you did not create an account, no further action is required.</p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Regards,<br>
+Laravel</p>
+
+
+<table class="subcopy" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; border-top: 1px solid #e4e4e7; margin-top: 25px; padding-top: 25px;">
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; text-align: left; font-size: 14px;">If you're having trouble clicking the "Verify Email Address" button, copy and paste the URL below
+into your web browser: <span class="break-all" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; word-break: break-all;"><a href="http://127.0.0.1:8001/email/verify/71/b90b1f90aa1a98bb30f2f67581560c44ced0ea5c?expires=1773583280&amp;signature=e6ec4ec057a71ffd3710e84f7825ef1d393b0c9c788c0961ffb6ad0a54e00382" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; word-break: break-all;">http://127.0.0.1:8001/email/verify/71/b90b1f90aa1a98bb30f2f67581560c44ced0ea5c?expires=1773583280&amp;signature=e6ec4ec057a71ffd3710e84f7825ef1d393b0c9c788c0961ffb6ad0a54e00382</a></span></p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; margin: 0 auto; padding: 0; text-align: center; width: 570px;">
+<tr>
+<td class="content-cell" align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; color: #a1a1aa; font-size: 12px; text-align: center;">© 2026 Laravel. All rights reserved.</p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+--S8p0CCYC--
+  

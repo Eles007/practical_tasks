@@ -17,17 +17,5 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <div class="card shadow-sm mt-2">
-                <div class="card-body text-center">
-                    <h5 class="mb-3">Хотите оставить отзыв?</h5>
-                    <!--  <a href="#" class="btn btn-warning w-100 mb-2">Создать отзыв</a> !-->
-                    <a href="#" class="fw-semibold text-decoration-none text-muted">Войдите</a>
-                    или
-                    <a href="$" class="fw-semibold text-decoration-none text-muted">зарегистрируйтесь</a>,
-                    чтобы оставить отзыв
-                </div>
-            </div>
-        </div>
     </div>
 </x-layouts>
